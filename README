@@ -1,0 +1,30 @@
+This is my A-Level Computing coursework application. (A-Levels are exams in 
+the UK taken before entry to University). The project ran from October 2009 
+to April 2010, however most of the coding was done in a relatively short time.
+
+The project is designed to help students learn Assembly. The application was
+made to replace the original one written by my Computing lecturer, Charlie 
+Brown. The original was written in Visual Basic and was really buggy. I tried 
+to make it a bit better.
+
+The code is in C# and uses the .NET framework on Windows. It has been compiled
+on Windows XP, Vista and 7. Use the included Visual Studio Solution file
+to open and compile the project.
+
+I do not take credit for the original application, this is a complete re-write
+so if you use any of this code in your own projects please credit me and
+tell me.
+
+If you use this project or want to support it for any reason, you can donate
+to help fund the coffee that keeps me running :)
+
+Author: Dan Palmer
+Email: dan.palmer@me.com
+
+TODO
+====
+
+ - Add the ability to change the password pattern.
+
+ - Create a Mac OS security plugin to allow users to have this as their
+   password authentication on their system.

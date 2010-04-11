@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly Simulator", "Assembly Simulator\Assembly Simulator.csproj", "{77C40241-BC06-4079-8810-9B0CC498CBFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77C40241-BC06-4079-8810-9B0CC498CBFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C40241-BC06-4079-8810-9B0CC498CBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C40241-BC06-4079-8810-9B0CC498CBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C40241-BC06-4079-8810-9B0CC498CBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		BuildVersion_UpdateFileVersion = False
+		BuildVersion_UpdateAssemblyVersion = False
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<List>
+<!-- BASIC FUNCTIONS -->
+  <instruction>
+    <name>Load</name>
+    <detail>
+      Loads either a number or a memory address into the accumulator. 
+      Takes the OPERAND of a immediate address, direct address or symbolic address.
+    </detail>
+    <OPCODE>LD</OPCODE>
+    <colour>1</colour>
+  </instruction>
+  <instruction>
+    <name>Store</name>
+    <detail>
+      Stores the value of the accumulator to a memory address. 
+      Takes the OPERAND of either a direct address or a symbolic address.
+    </detail>
+    <OPCODE>ST</OPCODE>
+    <colour>1</colour>
+  </instruction>
+  <instruction>
+    <name>Define Byte</name>
+    <detail>
+      This defines a label and a variable. 
+      The variable will be stored in the first available memory location.
+    </detail>
+    <OPCODE>DEFB</OPCODE>
+    <colour>1</colour>
+  </instruction>
+<!-- MATHS FUNCTIONS -->
+  <instruction>
+    <name>Add</name>
+    <detail>
+      Adds either a number or the contents of a memory location to the accumulator. 
+      Takes the OPERAND of a immediate address, direct address or symbolic address.
+    </detail>
+    <OPCODE>ADD</OPCODE>
+    <colour>2</colour>
+  </instruction>
+  <instruction>
+    <name>Subtract</name>
+    <detail>
+      Subtracts either a number of the contents of a memory location from the accumulator.
+      Takes the OPERAND of a immediate address, direct address or symbolic address.
+    </detail>
+    <OPCODE>SUB</OPCODE>
+    <colour>2</colour>
+  </instruction>
+  <instruction>
+    <name>Multiply</name>
+    <detail>
+      Multiplies the contents of the accumulator by either the contents of a memory location or a number.
+      Takes the OPERAND of a immediate address, direct address or symbolic address.
+    </detail>
+    <OPCODE>MUL</OPCODE>
+    <colour>2</colour>
+  </instruction>
+  <instruction>
+    <name>Divide</name>
+    <detail>
+      Divides the contents of the accumulator by either the contents of a memory location or a number.
+      Takes the OPERAND of a immediate address, direct address or symbolic address.
+    </detail>
+    <OPCODE>DIV</OPCODE>
+    <colour>2</colour>
+  </instruction>
+  <instruction>
+    <name>And</name>
+    <detail>
+      Performs an AND operation on the contents of the accumulator and a given number or memory location.
+      Takes the OPERAND of a immediate address, direct address or symbolic address.
+    </detail>
+    <OPCODE>AND</OPCODE>
+    <colour>2</colour>
+  </instruction>
+  <instruction>
+    <name>Or</name>
+    <detail>
+      Performs an OR operation on the contents of the accumulator and a given number or memory location.
+      Takes the OPERAND of a immediate address, direct address or symbolic address.
+    </detail>
+    <OPCODE>OR</OPCODE>
+    <colour>2</colour>
+  </instruction>
+<!-- COMPARISON FUNCTIONS -->
+  <instruction>
+    <name>Compare</name>
+    <detail>
+      Compares the accumulator to the OPERAND and sets the registers accordingly.
+      Takes the OPERAND of a immediate address, direct address or symbolic address.
+    </detail>
+    <OPCODE>CMP</OPCODE>
+    <colour>3</colour>
+  </instruction>
+  <instruction>
+    <name>Jump</name>
+    <detail>
+      Jumps to the line specified in the OPERAND.
+      OPERAND must be a unique label of a line.
+    </detail>
+    <OPCODE>JP</OPCODE>
+    <colour>3</colour>
+  </instruction>
+  <instruction>
+    <name>Jump if Equal</name>
+    <detail>
+      Jumps if the zero flag is set and therefore jumps when the accumulator is equal to what it was compared with in the CMP command.
+      Takes the OPERAND of a label to jump to in the program.
+    </detail>
+    <OPCODE>JE</OPCODE>
+    <colour>3</colour>
+  </instruction>
+  <instruction>
+    <name>Jump if Greater</name>
+    <detail>
+      Jumps if the zero flag is not 1 and the sign flag is the same as the overflow.
+      Takes the OPERAND of a label to jump to in the program.
+    </detail>
+    <OPCODE>JG</OPCODE>
+    <colour>3</colour>
+  </instruction>
+  <instruction>
+    <name>Jump if Less</name>
+    <detail>
+      Jumps if the zero flag is not 1 and the sign flag is not the same as the overflow.
+      Takes the OPERAND of a label to jump to in the program.
+    </detail>
+    <OPCODE>JL</OPCODE>
+    <colour>3</colour>
+  </instruction>
+  <instruction>
+    <name>Jump if Greater than or Equal</name>
+    <detail>
+      Jumps if the zero flag is 1 or the sign flag is not the same as the overflow.
+      Takes the OPERAND of a label to jump to in the program.
+    </detail>
+    <OPCODE>JGE</OPCODE>
+    <colour>3</colour>
+  </instruction>
+  <instruction>
+    <name>Jump if Less or Equal</name>
+    <detail>
+      Jumps if the zero flag is 1 or the sign flag is not the same as the overflow.
+      Takes the OPERAND of a label to jump to in the program.
+    </detail>
+    <OPCODE>JLE</OPCODE>
+    <colour>3</colour>
+  </instruction>
+  <instruction>
+    <name>Jump if Not Equal</name>
+    <detail>
+      Jumps if the the zero flag is 0.
+      Takes the OPERAND of a label to jump to in the program.
+    </detail>
+    <OPCODE>JNE</OPCODE>
+    <colour>3</colour>
+  </instruction>
+<!-- OTHER STUFF -->
+  <instruction>
+    <name>Get Character</name>
+    <detail>
+      
+    </detail>
+    <OPCODE>GETCHAR</OPCODE>
+    <colour>4</colour>
+  </instruction>
+  <instruction>
+    <name>Get Integer</name>
+    <detail>
+      
+    </detail>
+    <OPCODE>GETINT</OPCODE>
+    <colour>4</colour>
+  </instruction>
+  <instruction>
+    <name>Put Character</name>
+    <detail>
+      
+    </detail>
+    <OPCODE>PUTCHAR</OPCODE>
+    <colour>4</colour>
+  </instruction>
+  <instruction>
+    <name>Put Integer</name>
+    <detail>
+      
+    </detail>
+    <OPCODE>PUTINT</OPCODE>
+    <colour>4</colour>
+  </instruction>
+</List>
