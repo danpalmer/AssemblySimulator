@@ -24,7 +24,10 @@ Email: dan.palmer@me.com
 TODO
 ====
 
- - Add the ability to change the password pattern.
+ - Enable other input modes (binary/hex) and write the code to handle this.
+   This will require lots of validation to work properly with the current
+   opcode input window.
 
- - Create a Mac OS security plugin to allow users to have this as their
-   password authentication on their system.
+ - Add the ability for the instructions to customise the input validator.
+
+ - Reset instruction execution at the end of stepping through the instructions.
