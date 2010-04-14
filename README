@@ -31,3 +31,6 @@ TODO
  - Add the ability for the instructions to customise the input validator.
 
  - Reset instruction execution at the end of stepping through the instructions.
+
+ - Add support for different types of data to be used as the operand for the math
+   functions. Support RAM addresses and Symlinks.

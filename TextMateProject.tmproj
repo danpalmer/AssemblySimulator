@@ -30,10 +30,18 @@
 			<key>isExpanded</key>
 			<true/>
 			<key>subItems</key>
-			<dict/>
+			<dict>
+				<key>Assembly Simulator</key>
+				<dict>
+					<key>isExpanded</key>
+					<true/>
+					<key>subItems</key>
+					<dict/>
+				</dict>
+			</dict>
 		</dict>
 	</dict>
 	<key>windowFrame</key>
-	<string>{{1630, 234}, {1110, 862}}</string>
+	<string>{{2240, 230}, {629, 899}}</string>
 </dict>
 </plist>

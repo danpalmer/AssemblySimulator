@@ -17,6 +17,11 @@ namespace Assembly_Simulator
         // All values coming to this point should be 'valid' but some will chang registers
         // on the CPU when set as the accumulator. These registers are used for Jump functions.
 
+		// TODO: Add Support for RAM addresses and Symlinks to ADD
+		// TODO: Add Support for RAM addresses and Symlinks to SUB
+		// TODO: Add Support for RAM addresses and Symlinks to MUL
+		// TODO: Add Support for RAM addresses and Symlinks to DIV
+
         public string accumulator {
             get
             {
