@@ -349,6 +349,9 @@ namespace Assembly_Simulator
         // Reserve a memory address
         private void DEFB(string label, int operand)
         {
+			if (label == "" || label == null) {
+				error("No Label Provided", "The DEFB instruction requires a Label for it to link to a RAM address. Do not use a Label that you may use for Jump instructions.");
+			}
             // Ignore operand
             int ramIndex = parent.addRAM(1);
             parent.setNameForRAMIndex(ramIndex, label);
@@ -367,8 +370,10 @@ namespace Assembly_Simulator
         // Jump to operand label
         private void JP(string label, string operand)
         {
-            // Change the next instruction to be executed by getting the label to jump to
-            this.programCounter = (parent.programInstructionIndexForLabel(operand) -1).ToString();
+			if (operand == "" || operand == null) {
+            	// Change the next instruction to be executed by getting the label to jump to
+            	this.programCounter = (parent.programInstructionIndexForLabel(operand) -1).ToString();
+			}
         }
 
         // Jump to operand label if greater: z=0 and ns=0

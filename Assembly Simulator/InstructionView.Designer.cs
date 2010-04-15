@@ -62,7 +62,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Location = new System.Drawing.Point(6, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 22);
+            this.label7.Size = new System.Drawing.Size(120, 20);
             this.label7.TabIndex = 15;
             this.label7.Text = "Label";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -72,9 +72,9 @@
             this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Location = new System.Drawing.Point(6, 52);
+            this.label6.Location = new System.Drawing.Point(6, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 22);
+            this.label6.Size = new System.Drawing.Size(120, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "OPERAND";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -84,18 +84,17 @@
             this.textBoxLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxLabel.Location = new System.Drawing.Point(125, 31);
             this.textBoxLabel.Name = "textBoxLabel";
-            this.textBoxLabel.Size = new System.Drawing.Size(68, 22);
+            this.textBoxLabel.Size = new System.Drawing.Size(68, 20);
             this.textBoxLabel.TabIndex = 13;
             // 
             // textBoxOPERAND
             // 
             this.textBoxOPERAND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxOPERAND.Location = new System.Drawing.Point(125, 52);
+            this.textBoxOPERAND.Location = new System.Drawing.Point(125, 50);
             this.textBoxOPERAND.Name = "textBoxOPERAND";
             this.textBoxOPERAND.ReadOnly = true;
-            this.textBoxOPERAND.Size = new System.Drawing.Size(68, 22);
+            this.textBoxOPERAND.Size = new System.Drawing.Size(68, 20);
             this.textBoxOPERAND.TabIndex = 12;
-            this.textBoxOPERAND.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxOPERAND_Click);
             // 
             // labelDetail
             // 
@@ -112,7 +111,7 @@
             this.radBefore.AutoSize = true;
             this.radBefore.Location = new System.Drawing.Point(205, 49);
             this.radBefore.Name = "radBefore";
-            this.radBefore.Size = new System.Drawing.Size(59, 17);
+            this.radBefore.Size = new System.Drawing.Size(56, 17);
             this.radBefore.TabIndex = 18;
             this.radBefore.Text = "Before";
             this.radBefore.UseVisualStyleBackColor = true;
@@ -122,7 +121,7 @@
             this.radAfter.AutoSize = true;
             this.radAfter.Location = new System.Drawing.Point(205, 79);
             this.radAfter.Name = "radAfter";
-            this.radAfter.Size = new System.Drawing.Size(50, 17);
+            this.radAfter.Size = new System.Drawing.Size(47, 17);
             this.radAfter.TabIndex = 19;
             this.radAfter.Text = "After";
             this.radAfter.UseVisualStyleBackColor = true;
@@ -133,7 +132,7 @@
             this.radEnd.Checked = true;
             this.radEnd.Location = new System.Drawing.Point(205, 109);
             this.radEnd.Name = "radEnd";
-            this.radEnd.Size = new System.Drawing.Size(59, 17);
+            this.radEnd.Size = new System.Drawing.Size(57, 17);
             this.radEnd.TabIndex = 20;
             this.radEnd.TabStop = true;
             this.radEnd.Text = "At End";
@@ -144,7 +143,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(196, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 21;
             this.label1.Text = "Insert:";
             // 
@@ -162,7 +161,7 @@
             // addInstruction
             // 
             this.addInstruction.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.addInstruction.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.addInstruction.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.addInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addInstruction.Location = new System.Drawing.Point(199, 161);
             this.addInstruction.Name = "addInstruction";
@@ -175,7 +174,7 @@
             // clearInstruction
             // 
             this.clearInstruction.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.clearInstruction.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.clearInstruction.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.clearInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearInstruction.Location = new System.Drawing.Point(199, 133);
             this.clearInstruction.Name = "clearInstruction";
@@ -204,7 +203,7 @@
             this.Controls.Add(this.textBoxLabel);
             this.Controls.Add(this.textBoxOPERAND);
             this.Controls.Add(this.labelName);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "InstructionView";
             this.Size = new System.Drawing.Size(295, 200);
             this.ResumeLayout(false);

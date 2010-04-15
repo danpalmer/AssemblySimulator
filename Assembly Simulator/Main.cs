@@ -758,5 +758,14 @@ namespace Assembly_Simulator
             timer_Tick(sender, e);
             timer.Stop();
         }
+
+        private void collapseItems_Click(object sender, EventArgs e)
+        {
+            foreach (InstructionView x in this.instructionFlowPanel.Controls)
+            {
+                x.Height = 25;
+            }
+        }
+
     }
 }

@@ -158,9 +158,8 @@
     <Content Include="images\icon.ico" />
     <Content Include="images\icon.png" />
     <None Include="Assembly Simulator_TemporaryKey.pfx" />
-    <None Include="InstructionList.dat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="InstructionList.dat">
+    </EmbeddedResource>
     <None Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -195,7 +194,7 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.DayStamp" BuildVersion_UpdateFileVersion="True" />
+      <UserProperties BuildVersion_UpdateFileVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.DayStamp" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

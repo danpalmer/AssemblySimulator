@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.splitView = new System.Windows.Forms.SplitContainer();
+            this.textBoxAccumulatorHex = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.newButton = new System.Windows.Forms.Button();
@@ -61,12 +62,14 @@
             this.columnLabel = new System.Windows.Forms.ColumnHeader();
             this.columnOpcode = new System.Windows.Forms.ColumnHeader();
             this.columnOperand = new System.Windows.Forms.ColumnHeader();
+            this.collapseItems = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.mainFormTabs = new System.Windows.Forms.TabControl();
             this.tabWrite = new System.Windows.Forms.TabPage();
             this.instructionFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tabExecute = new System.Windows.Forms.TabPage();
+            this.cpuACCHex = new System.Windows.Forms.TextBox();
             this.cpuCIR2 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.cpuACC = new System.Windows.Forms.TextBox();
@@ -87,8 +90,6 @@
             this.cpuImage = new System.Windows.Forms.PictureBox();
             this.systemBusPictureBox = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.textBoxAccumulatorHex = new System.Windows.Forms.TextBox();
-            this.cpuACCHex = new System.Windows.Forms.TextBox();
             this.splitView.Panel1.SuspendLayout();
             this.splitView.Panel2.SuspendLayout();
             this.splitView.SuspendLayout();
@@ -106,6 +107,7 @@
             // 
             this.splitView.BackColor = System.Drawing.Color.Transparent;
             this.splitView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitView.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitView.IsSplitterFixed = true;
             this.splitView.Location = new System.Drawing.Point(0, 0);
             this.splitView.Name = "splitView";
@@ -145,19 +147,34 @@
             // splitView.Panel2
             // 
             this.splitView.Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.splitView.Panel2.Controls.Add(this.collapseItems);
             this.splitView.Panel2.Controls.Add(this.pictureBox1);
             this.splitView.Panel2.Controls.Add(this.pictureBox3);
             this.splitView.Panel2.Controls.Add(this.mainFormTabs);
-            this.splitView.Size = new System.Drawing.Size(992, 616);
+            this.splitView.Size = new System.Drawing.Size(992, 636);
             this.splitView.SplitterDistance = 329;
             this.splitView.TabIndex = 0;
             // 
+            // textBoxAccumulatorHex
+            // 
+            this.textBoxAccumulatorHex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAccumulatorHex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAccumulatorHex.Location = new System.Drawing.Point(251, 432);
+            this.textBoxAccumulatorHex.Name = "textBoxAccumulatorHex";
+            this.textBoxAccumulatorHex.ReadOnly = true;
+            this.textBoxAccumulatorHex.Size = new System.Drawing.Size(63, 20);
+            this.textBoxAccumulatorHex.TabIndex = 33;
+            this.textBoxAccumulatorHex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Location = new System.Drawing.Point(12, 371);
+            this.label1.Location = new System.Drawing.Point(12, 411);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 22);
             this.label1.TabIndex = 32;
@@ -166,10 +183,12 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.Location = new System.Drawing.Point(12, 530);
+            this.label11.Location = new System.Drawing.Point(12, 550);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 22);
             this.label11.TabIndex = 31;
@@ -178,8 +197,8 @@
             // 
             // newButton
             // 
-            this.newButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.newButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.newButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.newButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.newButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newButton.Location = new System.Drawing.Point(12, -1);
             this.newButton.Name = "newButton";
@@ -191,8 +210,8 @@
             // 
             // helpButton
             // 
-            this.helpButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.helpButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.helpButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.helpButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.helpButton.Location = new System.Drawing.Point(253, -1);
             this.helpButton.Name = "helpButton";
@@ -204,8 +223,8 @@
             // 
             // openButton
             // 
-            this.openButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.openButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.openButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.openButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.openButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openButton.Location = new System.Drawing.Point(130, -1);
             this.openButton.Name = "openButton";
@@ -217,8 +236,8 @@
             // 
             // aboutButton
             // 
-            this.aboutButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aboutButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aboutButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.aboutButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.aboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aboutButton.Location = new System.Drawing.Point(194, -1);
             this.aboutButton.Name = "aboutButton";
@@ -230,8 +249,8 @@
             // 
             // saveButton
             // 
-            this.saveButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.saveButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.saveButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.saveButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Location = new System.Drawing.Point(71, -1);
             this.saveButton.Name = "saveButton";
@@ -243,10 +262,12 @@
             // 
             // deleteLine
             // 
-            this.deleteLine.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.deleteLine.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.deleteLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteLine.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.deleteLine.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.deleteLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteLine.Location = new System.Drawing.Point(190, 366);
+            this.deleteLine.Location = new System.Drawing.Point(190, 386);
             this.deleteLine.Name = "deleteLine";
             this.deleteLine.Size = new System.Drawing.Size(124, 22);
             this.deleteLine.TabIndex = 25;
@@ -256,6 +277,8 @@
             // 
             // intervalBox
             // 
+            this.intervalBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.intervalBox.FormattingEnabled = true;
             this.intervalBox.Items.AddRange(new object[] {
             "Instant",
@@ -263,7 +286,7 @@
             "1s",
             "2s",
             "5s"});
-            this.intervalBox.Location = new System.Drawing.Point(237, 525);
+            this.intervalBox.Location = new System.Drawing.Point(237, 545);
             this.intervalBox.Name = "intervalBox";
             this.intervalBox.Size = new System.Drawing.Size(76, 21);
             this.intervalBox.TabIndex = 22;
@@ -271,10 +294,12 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.BackColor = System.Drawing.SystemColors.Control;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Location = new System.Drawing.Point(190, 524);
+            this.label9.Location = new System.Drawing.Point(190, 544);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(124, 23);
             this.label9.TabIndex = 23;
@@ -283,10 +308,12 @@
             // 
             // executeWithDebug
             // 
-            this.executeWithDebug.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.executeWithDebug.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.executeWithDebug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.executeWithDebug.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.executeWithDebug.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.executeWithDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.executeWithDebug.Location = new System.Drawing.Point(190, 440);
+            this.executeWithDebug.Location = new System.Drawing.Point(190, 460);
             this.executeWithDebug.Name = "executeWithDebug";
             this.executeWithDebug.Size = new System.Drawing.Size(124, 43);
             this.executeWithDebug.TabIndex = 21;
@@ -296,11 +323,13 @@
             // 
             // executeWithTimer
             // 
-            this.executeWithTimer.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.executeWithTimer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.executeWithTimer.BackColor = System.Drawing.Color.LightSteelBlue;
             this.executeWithTimer.Enabled = false;
-            this.executeWithTimer.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.executeWithTimer.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.executeWithTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.executeWithTimer.Location = new System.Drawing.Point(190, 482);
+            this.executeWithTimer.Location = new System.Drawing.Point(190, 502);
             this.executeWithTimer.Name = "executeWithTimer";
             this.executeWithTimer.Size = new System.Drawing.Size(124, 43);
             this.executeWithTimer.TabIndex = 20;
@@ -310,8 +339,10 @@
             // 
             // textBoxOverflow
             // 
+            this.textBoxOverflow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxOverflow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxOverflow.Location = new System.Drawing.Point(131, 476);
+            this.textBoxOverflow.Location = new System.Drawing.Point(131, 508);
             this.textBoxOverflow.Name = "textBoxOverflow";
             this.textBoxOverflow.ReadOnly = true;
             this.textBoxOverflow.Size = new System.Drawing.Size(38, 20);
@@ -321,8 +352,10 @@
             // 
             // textBoxSign
             // 
+            this.textBoxSign.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSign.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxSign.Location = new System.Drawing.Point(131, 455);
+            this.textBoxSign.Location = new System.Drawing.Point(131, 489);
             this.textBoxSign.Name = "textBoxSign";
             this.textBoxSign.ReadOnly = true;
             this.textBoxSign.Size = new System.Drawing.Size(38, 20);
@@ -332,8 +365,10 @@
             // 
             // textBoxZero
             // 
+            this.textBoxZero.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxZero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxZero.Location = new System.Drawing.Point(131, 434);
+            this.textBoxZero.Location = new System.Drawing.Point(131, 470);
             this.textBoxZero.Name = "textBoxZero";
             this.textBoxZero.ReadOnly = true;
             this.textBoxZero.Size = new System.Drawing.Size(38, 20);
@@ -343,8 +378,10 @@
             // 
             // textBoxCarry
             // 
+            this.textBoxCarry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCarry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxCarry.Location = new System.Drawing.Point(131, 413);
+            this.textBoxCarry.Location = new System.Drawing.Point(131, 451);
             this.textBoxCarry.Name = "textBoxCarry";
             this.textBoxCarry.ReadOnly = true;
             this.textBoxCarry.Size = new System.Drawing.Size(38, 20);
@@ -354,46 +391,54 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Location = new System.Drawing.Point(12, 476);
+            this.label8.Location = new System.Drawing.Point(12, 508);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 22);
+            this.label8.Size = new System.Drawing.Size(120, 20);
             this.label8.TabIndex = 14;
             this.label8.Text = "Overflow Flag";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Location = new System.Drawing.Point(12, 455);
+            this.label4.Location = new System.Drawing.Point(12, 489);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 22);
+            this.label4.Size = new System.Drawing.Size(120, 20);
             this.label4.TabIndex = 13;
             this.label4.Text = "Negative Sign Flag";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Location = new System.Drawing.Point(12, 434);
+            this.label3.Location = new System.Drawing.Point(12, 470);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 22);
+            this.label3.Size = new System.Drawing.Size(120, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Zero Flag";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Location = new System.Drawing.Point(190, 391);
+            this.label7.Location = new System.Drawing.Point(190, 411);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 22);
             this.label7.TabIndex = 11;
@@ -402,32 +447,38 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Location = new System.Drawing.Point(12, 392);
+            this.label6.Location = new System.Drawing.Point(12, 432);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 22);
+            this.label6.Size = new System.Drawing.Size(120, 20);
             this.label6.TabIndex = 10;
             this.label6.Text = "Program Counter";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Location = new System.Drawing.Point(12, 413);
+            this.label5.Location = new System.Drawing.Point(12, 451);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 22);
+            this.label5.Size = new System.Drawing.Size(120, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Carry Flag";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxAccumulator
             // 
+            this.textBoxAccumulator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAccumulator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxAccumulator.Location = new System.Drawing.Point(190, 412);
+            this.textBoxAccumulator.Location = new System.Drawing.Point(190, 432);
             this.textBoxAccumulator.Name = "textBoxAccumulator";
             this.textBoxAccumulator.ReadOnly = true;
             this.textBoxAccumulator.Size = new System.Drawing.Size(62, 20);
@@ -436,8 +487,10 @@
             // 
             // textBoxProgramCounter
             // 
+            this.textBoxProgramCounter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxProgramCounter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxProgramCounter.Location = new System.Drawing.Point(131, 392);
+            this.textBoxProgramCounter.Location = new System.Drawing.Point(131, 432);
             this.textBoxProgramCounter.Name = "textBoxProgramCounter";
             this.textBoxProgramCounter.ReadOnly = true;
             this.textBoxProgramCounter.Size = new System.Drawing.Size(38, 20);
@@ -446,10 +499,12 @@
             // 
             // clearOutput
             // 
-            this.clearOutput.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.clearOutput.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.clearOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearOutput.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.clearOutput.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.clearOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearOutput.Location = new System.Drawing.Point(260, 551);
+            this.clearOutput.Location = new System.Drawing.Point(260, 571);
             this.clearOutput.Name = "clearOutput";
             this.clearOutput.Size = new System.Drawing.Size(54, 49);
             this.clearOutput.TabIndex = 3;
@@ -459,9 +514,11 @@
             // 
             // outputBox
             // 
+            this.outputBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.outputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.outputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputBox.Location = new System.Drawing.Point(12, 551);
+            this.outputBox.Location = new System.Drawing.Point(12, 571);
             this.outputBox.Multiline = true;
             this.outputBox.Name = "outputBox";
             this.outputBox.ReadOnly = true;
@@ -470,7 +527,10 @@
             // 
             // programView
             // 
+            this.programView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.programView.AutoArrange = false;
+            this.programView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.programView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnLabel,
             this.columnOpcode,
@@ -482,7 +542,7 @@
             this.programView.Location = new System.Drawing.Point(12, 39);
             this.programView.MultiSelect = false;
             this.programView.Name = "programView";
-            this.programView.Size = new System.Drawing.Size(302, 328);
+            this.programView.Size = new System.Drawing.Size(302, 348);
             this.programView.TabIndex = 0;
             this.programView.UseCompatibleStateImageBehavior = false;
             this.programView.View = System.Windows.Forms.View.Details;
@@ -502,10 +562,26 @@
             this.columnOperand.Text = "OPERAND";
             this.columnOperand.Width = 88;
             // 
+            // collapseItems
+            // 
+            this.collapseItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.collapseItems.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.collapseItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.collapseItems.Location = new System.Drawing.Point(563, 613);
+            this.collapseItems.Name = "collapseItems";
+            this.collapseItems.Size = new System.Drawing.Size(75, 24);
+            this.collapseItems.TabIndex = 5;
+            this.collapseItems.Text = "Collapse All";
+            this.collapseItems.UseVisualStyleBackColor = false;
+            this.collapseItems.Click += new System.EventHandler(this.collapseItems_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 599);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 614);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(650, 2);
             this.pictureBox1.TabIndex = 4;
@@ -513,15 +589,21 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pictureBox3.ErrorImage = null;
             this.pictureBox3.Location = new System.Drawing.Point(638, 12);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(2, 600);
+            this.pictureBox3.Size = new System.Drawing.Size(2, 620);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
             // mainFormTabs
             // 
+            this.mainFormTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.mainFormTabs.Controls.Add(this.tabWrite);
             this.mainFormTabs.Controls.Add(this.tabExecute);
             this.mainFormTabs.ItemSize = new System.Drawing.Size(60, 20);
@@ -529,7 +611,7 @@
             this.mainFormTabs.Multiline = true;
             this.mainFormTabs.Name = "mainFormTabs";
             this.mainFormTabs.SelectedIndex = 0;
-            this.mainFormTabs.Size = new System.Drawing.Size(627, 588);
+            this.mainFormTabs.Size = new System.Drawing.Size(627, 604);
             this.mainFormTabs.TabIndex = 0;
             this.mainFormTabs.SelectedIndexChanged += new System.EventHandler(this.mainFormTabs_SelectedIndexChanged);
             // 
@@ -540,7 +622,7 @@
             this.tabWrite.Location = new System.Drawing.Point(4, 24);
             this.tabWrite.Name = "tabWrite";
             this.tabWrite.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWrite.Size = new System.Drawing.Size(619, 560);
+            this.tabWrite.Size = new System.Drawing.Size(619, 576);
             this.tabWrite.TabIndex = 0;
             this.tabWrite.Text = "Write Program";
             // 
@@ -552,7 +634,7 @@
             this.instructionFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.instructionFlowPanel.Location = new System.Drawing.Point(3, 3);
             this.instructionFlowPanel.Name = "instructionFlowPanel";
-            this.instructionFlowPanel.Size = new System.Drawing.Size(613, 554);
+            this.instructionFlowPanel.Size = new System.Drawing.Size(613, 570);
             this.instructionFlowPanel.TabIndex = 0;
             // 
             // tabExecute
@@ -583,11 +665,22 @@
             this.tabExecute.TabIndex = 1;
             this.tabExecute.Text = "Execute Program";
             // 
+            // cpuACCHex
+            // 
+            this.cpuACCHex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cpuACCHex.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpuACCHex.Location = new System.Drawing.Point(131, 224);
+            this.cpuACCHex.Name = "cpuACCHex";
+            this.cpuACCHex.ReadOnly = true;
+            this.cpuACCHex.Size = new System.Drawing.Size(126, 31);
+            this.cpuACCHex.TabIndex = 43;
+            this.cpuACCHex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // cpuCIR2
             // 
             this.cpuCIR2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cpuCIR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cpuCIR2.Location = new System.Drawing.Point(131, 126);
+            this.cpuCIR2.Location = new System.Drawing.Point(131, 122);
             this.cpuCIR2.Name = "cpuCIR2";
             this.cpuCIR2.ReadOnly = true;
             this.cpuCIR2.Size = new System.Drawing.Size(126, 31);
@@ -602,7 +695,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(73, 194);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 35);
+            this.label14.Size = new System.Drawing.Size(59, 31);
             this.label14.TabIndex = 40;
             this.label14.Text = "ACC";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -626,7 +719,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(73, 160);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 35);
+            this.label13.Size = new System.Drawing.Size(59, 31);
             this.label13.TabIndex = 38;
             this.label13.Text = "PC";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -650,7 +743,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(73, 272);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 35);
+            this.label12.Size = new System.Drawing.Size(59, 31);
             this.label12.TabIndex = 36;
             this.label12.Text = "MAR";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -674,7 +767,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(73, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 35);
+            this.label2.Size = new System.Drawing.Size(59, 31);
             this.label2.TabIndex = 34;
             this.label2.Text = "CIR";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -682,7 +775,7 @@
             // stepForward
             // 
             this.stepForward.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.stepForward.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.stepForward.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.stepForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stepForward.Location = new System.Drawing.Point(19, 494);
             this.stepForward.Name = "stepForward";
@@ -706,7 +799,7 @@
             // buttonRemoveRAM
             // 
             this.buttonRemoveRAM.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonRemoveRAM.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonRemoveRAM.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.buttonRemoveRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRemoveRAM.Location = new System.Drawing.Point(506, 489);
             this.buttonRemoveRAM.Name = "buttonRemoveRAM";
@@ -719,7 +812,7 @@
             // buttonAddRAM
             // 
             this.buttonAddRAM.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonAddRAM.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonAddRAM.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.buttonAddRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddRAM.Location = new System.Drawing.Point(542, 489);
             this.buttonAddRAM.Name = "buttonAddRAM";
@@ -801,43 +894,18 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // textBoxAccumulatorHex
-            // 
-            this.textBoxAccumulatorHex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxAccumulatorHex.Location = new System.Drawing.Point(251, 412);
-            this.textBoxAccumulatorHex.Name = "textBoxAccumulatorHex";
-            this.textBoxAccumulatorHex.ReadOnly = true;
-            this.textBoxAccumulatorHex.Size = new System.Drawing.Size(63, 20);
-            this.textBoxAccumulatorHex.TabIndex = 33;
-            this.textBoxAccumulatorHex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cpuACCHex
-            // 
-            this.cpuACCHex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cpuACCHex.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cpuACCHex.Location = new System.Drawing.Point(131, 228);
-            this.cpuACCHex.Name = "cpuACCHex";
-            this.cpuACCHex.ReadOnly = true;
-            this.cpuACCHex.Size = new System.Drawing.Size(126, 31);
-            this.cpuACCHex.TabIndex = 43;
-            this.cpuACCHex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(992, 616);
+            this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ClientSize = new System.Drawing.Size(992, 636);
             this.Controls.Add(this.splitView);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1000, 650);
             this.MinimumSize = new System.Drawing.Size(1000, 650);
             this.Name = "Main";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Assembly Simulator";
             this.splitView.Panel1.ResumeLayout(false);
@@ -918,6 +986,7 @@
         private System.Windows.Forms.TextBox cpuCIR2;
         private System.Windows.Forms.TextBox textBoxAccumulatorHex;
         private System.Windows.Forms.TextBox cpuACCHex;
+        private System.Windows.Forms.Button collapseItems;
     }
 }
 

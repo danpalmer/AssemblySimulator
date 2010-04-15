@@ -61,13 +61,10 @@ namespace Assembly_Simulator
         // Expands and contracts the box when clicked. Toggle action
         public void nameLabel_Click(object sender, EventArgs e)
         {
-            foreach (InstructionView x in this.Parent.Controls)
-            {
-                if (x != this)
-                {
-                    x.Height = 25;
-                }
-            }
+            /* 
+             * Removed auto-collapse because the app now supports full screen view
+             * therefore it is nice to have a few expanded at the same time.
+             */
 
             if (this.Height == 25)
                 this.Height = 200;

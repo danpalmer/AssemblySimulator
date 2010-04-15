@@ -9311,8 +9311,8 @@
   <data name="systemBusPictureBox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlgAAAIbCAYAAAA3quAeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCwAA
-        CwsBbQSEtwAAwexJREFUeF7t/Qm0JFl1pokmreqhXquaftWv65VWvWatEpJAiKxCJFL16049qUtdJRAg
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCgAA
+        CwoBv0NmUwAAwexJREFUeF7t/Qm0JFl1pokmreqhXquaftWv65VWvWatEpJAiKxCJFL16049qUtdJRAg
         JDFmAkkCSaJAzJAoQKARERKgBAlIknmQQAhJCBBizjFyiOFGxjzHned5HvxO+51t5tvvvueeY3bM3Nyv
         m/sfa+3lw3U3N/tt+uLf++zzODL/rsM/KAAFoAAUgAJQAApAgeIUYMDCPygABaAAFIACUAAKQIHiFLiu
         uEVhSVAACkABKAAFoAAUgAJRdhAyQAEoAAWgABSAAlAAChSrAACrWD2xNCgABaAAFIACUAAKwMHCMQAF
@@ -10148,15 +10148,6 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>43</value>
   </metadata>
-  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAIAAABvFaqvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCwAA
-        CwsBbQSEtwAAAI9JREFUOE/tlDEKwDAMA9PvFFoSyBLI1P8/qrLH2EYQPEaTCuotV/fqvZeUANRauzUo
-        eHRDNwWvAfFoUCIQ3Qio1vpqUCIQ3QhozokdghKB6EZAY4xPgxKB6EZAKfFB1JF17YOoI+vaB1FH1rUP
-        oo6sax9EHVnXqdY2HNkv5twav8dUa1bBhsdza86/b7nHH4uMTd2G+KE7AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAAAIABoBAAAZgAAACAgAAAAACAAqBAAAM4EAAAwMAAAAAAgAKglAAB2FQAAQEAAAAAA

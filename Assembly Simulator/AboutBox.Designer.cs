@@ -48,7 +48,7 @@
             this.textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDescription.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxDescription.Location = new System.Drawing.Point(266, 24);
+            this.textBoxDescription.Location = new System.Drawing.Point(266, 19);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
@@ -61,20 +61,23 @@
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.BackColor = System.Drawing.Color.LightSteelBlue;
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.okButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.okButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.okButton.Location = new System.Drawing.Point(348, 248);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&OK";
+            this.okButton.UseVisualStyleBackColor = false;
             // 
             // labelCompanyName
             // 
-            this.labelCompanyName.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.labelCompanyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelCompanyName.BackColor = System.Drawing.Color.Transparent;
             this.labelCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCompanyName.Location = new System.Drawing.Point(-15, 47);
+            this.labelCompanyName.Location = new System.Drawing.Point(-18, 49);
             this.labelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelCompanyName.MaximumSize = new System.Drawing.Size(500, 17);
             this.labelCompanyName.MinimumSize = new System.Drawing.Size(100, 17);
@@ -87,10 +90,9 @@
             // 
             // labelCopyright
             // 
-            this.labelCopyright.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.labelCopyright.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelCopyright.BackColor = System.Drawing.Color.Transparent;
             this.labelCopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCopyright.Location = new System.Drawing.Point(-15, 31);
+            this.labelCopyright.Location = new System.Drawing.Point(-18, 33);
             this.labelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelCopyright.MaximumSize = new System.Drawing.Size(500, 17);
             this.labelCopyright.MinimumSize = new System.Drawing.Size(100, 17);
@@ -103,10 +105,9 @@
             // 
             // labelVersion
             // 
-            this.labelVersion.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.labelVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelVersion.BackColor = System.Drawing.Color.Transparent;
             this.labelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVersion.Location = new System.Drawing.Point(-15, 15);
+            this.labelVersion.Location = new System.Drawing.Point(-18, 17);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(500, 17);
             this.labelVersion.MinimumSize = new System.Drawing.Size(100, 17);
@@ -119,10 +120,9 @@
             // 
             // labelProductName
             // 
-            this.labelProductName.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.labelProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelProductName.BackColor = System.Drawing.Color.Transparent;
             this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductName.Location = new System.Drawing.Point(-15, -1);
+            this.labelProductName.Location = new System.Drawing.Point(-18, 1);
             this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelProductName.MaximumSize = new System.Drawing.Size(500, 17);
             this.labelProductName.MinimumSize = new System.Drawing.Size(100, 17);
@@ -158,9 +158,9 @@
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(-3, 51);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 67);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(259, 241);
+            this.pictureBox3.Size = new System.Drawing.Size(227, 225);
             this.pictureBox3.TabIndex = 27;
             this.pictureBox3.TabStop = false;
             // 
@@ -170,7 +170,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(435, 283);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.labelProductName);

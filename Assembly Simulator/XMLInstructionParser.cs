@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.Reflection;
 
 namespace Assembly_Simulator
 {
@@ -18,7 +19,11 @@ namespace Assembly_Simulator
         public string[,] GetInstructions()
         {
             int index = 0;
-            XmlReader reader = XmlReader.Create(pathToXML);
+
+            // This has been changed to use the Instructions.dat file embedded in the application file
+            //XmlReader read = XmlReader.Create(pathToXML);
+            XmlReader reader = XmlReader.Create(Assembly.GetExecutingAssembly().GetManifestResourceStream("Assembly_Simulator." + pathToXML));
+
             reader.MoveToContent();
 
             // Count the number of instruction nodes
@@ -30,7 +35,8 @@ namespace Assembly_Simulator
             reader.Close();
             string[,] instructionArray = new string[index, 4];
             index = 0;
-            reader = XmlReader.Create(pathToXML);
+            // This has been changed to use the Instructions.dat file embedded in the application file
+            reader = XmlReader.Create(Assembly.GetExecutingAssembly().GetManifestResourceStream("Assembly_Simulator." + pathToXML));
             reader.MoveToContent();
 
             // Read through and add values to array
