@@ -39,7 +39,7 @@ namespace Assembly_Simulator
                 string[,] opcodes = parser.GetInstructions();
 
 
-                for (int i = 0; i < (opcodes.Length / 4); i++)
+                for (int i = 0; i < (opcodes.Length / 5); i++)
                 {
                     InstructionView newInstruction
                         = new InstructionView(
@@ -47,6 +47,7 @@ namespace Assembly_Simulator
                             opcodes[i, 1],
                             opcodes[i, 2],
                             Convert.ToInt32(opcodes[i, 3]),
+							opcodes[i, 4],
                             this);
                     instructionFlowPanel.Controls.Add(newInstruction);
                 }
@@ -328,7 +329,7 @@ namespace Assembly_Simulator
                 RAM_OutOfDate = true;
                 processor.reset("all");
                 updateProcessorValues();
-                mainFormTabs.SelectTab(tabExecute);
+                mainFormTabs.SelectTab(tabWrite);
                 updateCPUDiagramValues();
             }
         }
@@ -644,8 +645,17 @@ namespace Assembly_Simulator
                 {
                     StreamWriter s;
                     s = File.CreateText(save.FileName);
+                    bool error = false;
                     foreach (ProgramInstruction i in instructions)
                     {
+                        if (i.label.Length > 20)
+                        {
+                            i.label = i.label.Substring(0, 20);
+                            if (!error)
+                            {
+                                MessageBox.Show("One or more of your labels has exceeded the maximum length of 20 characters. To continue saving it has been shortened automatically.", "Error Saving File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                        }
                         s.WriteLine(i.saveableInstruction());
                     }
                     s.Close();
@@ -719,10 +729,14 @@ namespace Assembly_Simulator
         #endregion
 
 
-        internal string getValidatedInput(Control control)
+        internal string getValidatedInput(Control control, bool allowLabel)
         {
             ValidationWindow v = new ValidationWindow();
             TextBox x = (TextBox)control;
+            if (allowLabel)
+            {
+                v.allowLabel();
+            }
 
             this.TopMost = true;
             if (v.ShowDialog(this) == DialogResult.OK)
@@ -736,6 +750,11 @@ namespace Assembly_Simulator
                 {
                     this.TopMost = false;
                     return v.rah.Text.Insert(0, "#");
+                }
+                if (v.textboxLabel.Text != "")
+                {
+                    this.TopMost = false;
+                    return v.textboxLabel.Text;
                 }
                 else
                 {

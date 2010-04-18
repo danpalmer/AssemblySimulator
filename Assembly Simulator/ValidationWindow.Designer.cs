@@ -41,6 +41,8 @@
             this.rab = new Assembly_Simulator.EnhancedTextBox();
             this.evb = new Assembly_Simulator.EnhancedTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textboxLabel = new Assembly_Simulator.EnhancedTextBox();
+            this.labelLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +94,7 @@
             // 
             this.buttonOK.BackColor = System.Drawing.SystemColors.Menu;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonOK.Location = new System.Drawing.Point(336, 98);
+            this.buttonOK.Location = new System.Drawing.Point(336, 135);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 3;
@@ -155,7 +157,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(255, 99);
+            this.button1.Location = new System.Drawing.Point(255, 135);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
@@ -163,14 +165,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textboxLabel
+            // 
+            this.textboxLabel.Location = new System.Drawing.Point(99, 105);
+            this.textboxLabel.Name = "textboxLabel";
+            this.textboxLabel.Size = new System.Drawing.Size(100, 21);
+            this.textboxLabel.TabIndex = 12;
+            this.textboxLabel.Visible = false;
+            this.textboxLabel.TextChanged += new System.EventHandler(this.textboxLabel_TextChanged);
+            // 
+            // labelLabel
+            // 
+            this.labelLabel.AutoSize = true;
+            this.labelLabel.Location = new System.Drawing.Point(52, 108);
+            this.labelLabel.Name = "labelLabel";
+            this.labelLabel.Size = new System.Drawing.Size(41, 15);
+            this.labelLabel.TabIndex = 13;
+            this.labelLabel.Text = "Label:";
+            this.labelLabel.Visible = false;
+            // 
             // ValidationWindow
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(439, 134);
+            this.ClientSize = new System.Drawing.Size(439, 175);
             this.ControlBox = false;
+            this.Controls.Add(this.labelLabel);
+            this.Controls.Add(this.textboxLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rad);
             this.Controls.Add(this.evd);
@@ -214,5 +237,7 @@
         private EnhancedTextBox evd;
         private EnhancedTextBox rad;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelLabel;
+        public EnhancedTextBox textboxLabel;
     }
 }

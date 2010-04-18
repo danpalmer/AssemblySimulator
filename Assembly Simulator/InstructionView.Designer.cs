@@ -95,6 +95,7 @@
             this.textBoxOPERAND.ReadOnly = true;
             this.textBoxOPERAND.Size = new System.Drawing.Size(68, 20);
             this.textBoxOPERAND.TabIndex = 12;
+            this.textBoxOPERAND.Enter += new System.EventHandler(this.textBoxOPERAND_Click);
             // 
             // labelDetail
             // 

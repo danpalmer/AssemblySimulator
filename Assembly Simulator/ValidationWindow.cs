@@ -111,5 +111,22 @@ namespace Assembly_Simulator
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+		public void allowLabel()
+		{
+            this.labelLabel.Visible = true;
+            this.textboxLabel.Visible = true;
+		}
+
+        private void textboxLabel_TextChanged(object sender, EventArgs e)
+        {
+            // Clear other boxes
+            evh.Clear();
+            evd.Clear();
+            evb.Clear();
+            rah.Clear();
+            rad.Clear();
+            rab.Clear();
+        }
     }
 }

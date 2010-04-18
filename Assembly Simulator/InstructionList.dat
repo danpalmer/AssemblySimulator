@@ -7,6 +7,7 @@
     </detail>
     <OPCODE>LD</OPCODE>
     <colour>1</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Store</name>
@@ -14,6 +15,7 @@
     </detail>
     <OPCODE>ST</OPCODE>
     <colour>1</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Define Byte</name>
@@ -21,6 +23,7 @@
     </detail>
     <OPCODE>DEFB</OPCODE>
     <colour>1</colour>
+	<allowlabel>no</allowlabel>
   </instruction>
 <!-- MATHS FUNCTIONS -->
   <instruction>
@@ -29,6 +32,7 @@
     </detail>
     <OPCODE>ADD</OPCODE>
     <colour>2</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Subtract</name>
@@ -36,6 +40,7 @@
     </detail>
     <OPCODE>SUB</OPCODE>
     <colour>2</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Multiply</name>
@@ -45,6 +50,7 @@
     </detail>
     <OPCODE>MUL</OPCODE>
     <colour>2</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Divide</name>
@@ -52,6 +58,7 @@
     </detail>
     <OPCODE>DIV</OPCODE>
     <colour>2</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>And</name>
@@ -59,6 +66,7 @@
     </detail>
     <OPCODE>AND</OPCODE>
     <colour>2</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Or</name>
@@ -68,6 +76,7 @@
     </detail>
     <OPCODE>OR</OPCODE>
     <colour>2</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
 <!-- COMPARISON FUNCTIONS -->
   <instruction>
@@ -76,6 +85,7 @@
     </detail>
     <OPCODE>CMP</OPCODE>
     <colour>3</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Jump</name>
@@ -85,6 +95,7 @@
     </detail>
     <OPCODE>JP</OPCODE>
     <colour>3</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Jump if Equal</name>
@@ -92,6 +103,7 @@
     </detail>
     <OPCODE>JE</OPCODE>
     <colour>3</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Jump if Greater</name>
@@ -99,6 +111,7 @@
     </detail>
     <OPCODE>JG</OPCODE>
     <colour>3</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Jump if Less</name>
@@ -106,6 +119,7 @@
     </detail>
     <OPCODE>JL</OPCODE>
     <colour>3</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Jump if Greater than or Equal</name>
@@ -113,6 +127,7 @@
     </detail>
     <OPCODE>JGE</OPCODE>
     <colour>3</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Jump if Less or Equal</name>
@@ -120,6 +135,7 @@
     </detail>
     <OPCODE>JLE</OPCODE>
     <colour>3</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
   <instruction>
     <name>Jump if Not Equal</name>
@@ -127,6 +143,7 @@
     </detail>
     <OPCODE>JNE</OPCODE>
     <colour>3</colour>
+	<allowlabel>yes</allowlabel>
   </instruction>
 <!-- OTHER STUFF -->
   <instruction>
@@ -135,6 +152,7 @@
     </detail>
     <OPCODE>GETCHAR</OPCODE>
     <colour>4</colour>
+	<allowlabel>no</allowlabel>
   </instruction>
   <instruction>
     <name>Get Integer</name>
@@ -142,6 +160,7 @@
     </detail>
     <OPCODE>GETINT</OPCODE>
     <colour>4</colour>
+	<allowlabel>no</allowlabel>
   </instruction>
   <instruction>
     <name>Put Character</name>
@@ -149,6 +168,7 @@
     </detail>
     <OPCODE>PUTCHAR</OPCODE>
     <colour>4</colour>
+	<allowlabel>no</allowlabel>
   </instruction>
   <instruction>
     <name>Put Integer</name>
@@ -156,5 +176,6 @@
     </detail>
     <OPCODE>PUTINT</OPCODE>
     <colour>4</colour>
+	<allowlabel>no</allowlabel>
   </instruction>
 </List>

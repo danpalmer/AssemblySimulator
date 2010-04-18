@@ -234,12 +234,13 @@ namespace Assembly_Simulator
                     }
                 }
 
-                error(null, "Could not find symbolic link in array, "
+				// Code should never reach this location
+                error(null, "Could not find the label in array, "
                     + "please contact the publisher of this program for assistance");
             }
             else
             {
-                parent.setValueForRAMIndex(Convert.ToInt32(operand), accumulator);
+                parent.setValueForRAMIndex(Convert.ToInt32(hexToInt(operand)), accumulator);
                 Debug.WriteLine("Stored accumulator in memory location");
             }
         }
@@ -299,7 +300,7 @@ namespace Assembly_Simulator
                 int y = Convert.ToInt32(x);
 
                 // Validation done here because the input window is for letters and numbers
-                if (y > 127 || y < -127)
+                if (y > 255 || y < 0)
                     error(null, "Integer is not within the correct bounds");
                 else
                 {
@@ -370,10 +371,19 @@ namespace Assembly_Simulator
         // Jump to operand label
         private void JP(string label, string operand)
         {
-			if (operand == "" || operand == null) {
-            	// Change the next instruction to be executed by getting the label to jump to
-            	this.programCounter = (parent.programInstructionIndexForLabel(operand) -1).ToString();
-			}
+            if (operand != "" && operand != null)
+            {
+                // Change the next instruction to be executed by getting the label to jump to
+                this.programCounter = (parent.programInstructionIndexForLabel(operand) - 1).ToString();
+                if (this.programCounter == (-2).ToString())
+                {
+                    error("Bad Jump Instruction", "The label you tried to jump to does not exist.");
+                }
+            }
+            else
+            {
+                error("Bad Jump Instruction", "The Jump instruction requires an operand of the label to jump to.");
+            }
         }
 
         // Jump to operand label if greater: z=0 and ns=0

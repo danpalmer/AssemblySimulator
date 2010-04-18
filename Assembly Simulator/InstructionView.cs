@@ -13,9 +13,10 @@ namespace Assembly_Simulator
     public partial class InstructionView : UserControl
     {
         private Main parent;
+		private bool validatedInput;
 
         // Initialisation Code
-        public InstructionView(string name, string detail, string OPCODE, int colour, Main p)
+        public InstructionView(string name, string detail, string OPCODE, int colour, string vI, Main p)
         {
             InitializeComponent();
             labelName.Text = name;
@@ -44,7 +45,14 @@ namespace Assembly_Simulator
                     changeColour(Color.FromName("GradientInactiveCaption"));
                     break;
             }
-
+			
+			if (vI == "yes")
+			{
+				validatedInput = true;
+			} else {
+				validatedInput = false;
+			}
+	
             parent = p;
             // Set other values
 
@@ -107,9 +115,15 @@ namespace Assembly_Simulator
         // TODO: get this to work with tabbing in to the box rather than clicking on it.
         private void textBoxOPERAND_Click(object sender, EventArgs e)
         {
-            Control c = (Control)sender;
-            ((TextBox)sender).Text = parent.getValidatedInput(c);
-            this.addInstruction.Select();
+            if (validatedInput) {
+				Control c = (Control)sender;
+            	((TextBox)sender).Text = parent.getValidatedInput(c, true);
+            	this.addInstruction.Select();
+			} else {
+				Control c = (Control)sender;
+            	((TextBox)sender).Text = parent.getValidatedInput(c, false);
+            	this.addInstruction.Select();
+			}
         }
     }
 }

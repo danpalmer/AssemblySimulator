@@ -33,7 +33,7 @@ namespace Assembly_Simulator
             }
 
             reader.Close();
-            string[,] instructionArray = new string[index, 4];
+            string[,] instructionArray = new string[index, 5];
             index = 0;
             // This has been changed to use the Instructions.dat file embedded in the application file
             reader = XmlReader.Create(Assembly.GetExecutingAssembly().GetManifestResourceStream("Assembly_Simulator." + pathToXML));
@@ -58,6 +58,10 @@ namespace Assembly_Simulator
                 instructionArray[index, 3] =
                     reader.ReadElementContentAsString("colour", reader.NamespaceURI);
 
+				reader.ReadToFollowing("allowlabel");
+				instructionArray[index, 4] = 
+					reader.ReadElementContentAsString("allowlabel", reader.NamespaceURI);
+					
                 index++;
             }
 
