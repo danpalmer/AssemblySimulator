@@ -55,7 +55,7 @@ namespace Assembly_Simulator
             }
             catch
             {
-                MessageBox.Show("Could not find application resource Instructions.dat",
+                MessageBox.Show("Error 15, Could not find application resource Instructions.dat",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -95,7 +95,7 @@ namespace Assembly_Simulator
             {
                 // No program, show an error
                 MessageBox.Show(
-                    "You have not written a program to run yet. "
+                    "Error 16, You have not written a program to run yet. "
                     + "Use the boxes on the left hand side to write a program and then execute it.",
                     "No Program to Run");
             }
@@ -135,7 +135,7 @@ namespace Assembly_Simulator
             timer.Stop();
             processor.reset("all");
             MessageBox.Show(
-                "Due to errors in the program instructions, the program could not continue. "
+                "Error 17, Due to errors in the program instructions, the program could not continue. "
                 + "Please consult the documentation for help or seek help on writing assembly "
                 + "language programs from a teacher or the internet.",
                 "Program Execution Ended",
@@ -386,12 +386,12 @@ namespace Assembly_Simulator
                         }
                         else
                         {
-                            MessageBox.Show("Could not add instruction at that place. Check it is possible");
+                            MessageBox.Show("Error 18, Could not add instruction at that place. Check it is possible");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Could not add instruction at that place. Check it is possible");
+                        MessageBox.Show("Error 18, Could not add instruction at that place. Check it is possible");
                     }
                     break;
 
@@ -404,7 +404,7 @@ namespace Assembly_Simulator
                     }
                     else
                     {
-                        MessageBox.Show("Could not add instruction at that place. Check it is possible");
+                        MessageBox.Show("Error 18, Could not add instruction at that place. Check it is possible");
                     }
                     break;
 
@@ -434,7 +434,7 @@ namespace Assembly_Simulator
             }
             catch
             {
-                MessageBox.Show("Please select a line to delete");
+                MessageBox.Show("Error 19, Please select a line to delete");
             }
         }
         #endregion
@@ -558,7 +558,7 @@ namespace Assembly_Simulator
 
             if (x == "XX")
             {
-                processor.error(null, "Malformed memory value");
+                processor.error(null, "Error 20, Malformed memory value");
                 return "";
             }
             Debug.WriteLine("Instruction in memory position is: {0}", x);
@@ -653,7 +653,7 @@ namespace Assembly_Simulator
                             i.label = i.label.Substring(0, 20);
                             if (!error)
                             {
-                                MessageBox.Show("One or more of your labels has exceeded the maximum length of 20 characters. To continue saving it has been shortened automatically.", "Error Saving File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBox.Show("Error 21, One or more of your labels has exceeded the maximum length of 20 characters. To continue saving it has been shortened automatically.", "Error Saving File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             }
                         }
                         s.WriteLine(i.saveableInstruction());
@@ -662,7 +662,7 @@ namespace Assembly_Simulator
                 }
                 else
                 {
-                    MessageBox.Show("No path was selected, the file was not saved.");
+                    MessageBox.Show("Error 22, No path was selected, the file was not saved.");
                 }
             }
         }
@@ -708,7 +708,7 @@ namespace Assembly_Simulator
                 }
                 catch
                 {
-                    MessageBox.Show("The file you attempted to load was invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error 23, The file you attempted to load was invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
