@@ -1,7 +1,7 @@
 CPU.cs
 ------
 Error 01, could not process instruction
-Error 02, Cannot set direct address as memory location value
+Error 02, Cannot store values to a direct address.
 Error 03, Could not find the label in array, please see the troubleshooting section of the user manual.
 Error 04, No character input (GETCHAR)
 Error 05, Integer is not within the correct bounds (GETINT)

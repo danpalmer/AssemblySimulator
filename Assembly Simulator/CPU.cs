@@ -220,7 +220,7 @@ namespace Assembly_Simulator
             //  the operand
             if (operand[0] == Convert.ToChar("#"))
             {
-                error(null, "Error 02, Cannot set direct address as memory location value");
+                error(null, "Error 02, Cannot store values to a direct address.");
                 Debug.WriteLine("Error: Bad Instruction");
             }
             else if (checkSymlink(operand))
