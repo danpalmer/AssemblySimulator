@@ -99,7 +99,7 @@ namespace Assembly_Simulator
             else if (radEnd.Checked)
                 x = 3;
             else
-                MessageBox.Show("Please select where you would like to enter the instruction.");
+                MessageBox.Show("Error 14, Please select where you would like to enter the instruction.");
 
             parent.addInstruction(
                 textBoxLabel.Text,
