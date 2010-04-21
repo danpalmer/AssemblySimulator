@@ -1,0 +1,18 @@
+CPU.cs
+------
+Error 01, could not process instruction
+Error 02, Cannot set direct address as memory location value
+Error 03, Could not find the label in array, please see the troubleshooting section of the user manual.
+Error 04, No character input (GETCHAR)
+Error 05, Integer is not within the correct bounds (GETINT)
+Error 06, No character input (GETINT)
+Error 07, Could not convert operand or accumulator to an integer. (CMP)
+Error 08, The DEFB instruction requires a Label for it to link to a RAM address. Do not use a Label that you may use for Jump instructions.
+Error 09, The label you tried to jump to does not exist.
+Error 10, The Jump instruction requires an operand of the label to jump to.
+Error 11, Could not find symbolic link in array, please contact the publisher of this program for assistance.
+Error 12, Memory address out of bounds
+Error 13, Badly formed operand
+
+Main.cs
+-------

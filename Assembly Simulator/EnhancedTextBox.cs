@@ -87,7 +87,7 @@ namespace Assembly_Simulator
             base.ForeColor = Color.White;
             // Create a timer set to call endErrorFlash in 0.1s and start it
             Timer timer = new Timer();
-            timer.Interval = 2000;
+            timer.Interval = 100;
             timer.Tick += new System.EventHandler(this.endErrorFlash);
             timer.Start();
         }

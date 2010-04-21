@@ -1,3 +1,6 @@
+Description
+===========
+
 This is my A-Level Computing coursework application. (A-Levels are exams in 
 the UK taken before entry to University). The project ran from October 2009 
 to April 2010, however most of the coding was done in a relatively short time.
@@ -20,6 +23,7 @@ to help fund the coffee that keeps me running :)
 
 Author: Dan Palmer
 Email: dan.palmer@me.com
+Website: http://dapl.me
 
 TODO
 ====

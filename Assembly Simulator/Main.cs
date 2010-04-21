@@ -678,30 +678,37 @@ namespace Assembly_Simulator
         {
             if (new_program() == DialogResult.Yes)
             {
-                OpenFileDialog open = new OpenFileDialog();
-                open.RestoreDirectory = true;
-                open.Filter = "Assembly Simulator Files(*.as)\"|*.as";
-                if (open.ShowDialog() == DialogResult.OK)
+                try
                 {
-
-                    StreamReader s;
-                    string i;
-                    s = File.OpenText(open.FileName);
-                    i = s.ReadLine();
-                    while (i != null)
+                    OpenFileDialog open = new OpenFileDialog();
+                    open.RestoreDirectory = true;
+                    open.Filter = "Assembly Simulator Files(*.as)\"|*.as";
+                    if (open.ShowDialog() == DialogResult.OK)
                     {
-                        // Add instruction
-                        ProgramInstruction x = new ProgramInstruction(
-                            i.Substring(0, 20).Trim(),
-                            i.Substring(19, 20).Trim(),
-                            i.Substring(39, 20).Trim()
-                        );
-                        instructions.Add(x);
-                        // Read in new instruction
+
+                        StreamReader s;
+                        string i;
+                        s = File.OpenText(open.FileName);
                         i = s.ReadLine();
+                        while (i != null)
+                        {
+                            // Add instruction
+                            ProgramInstruction x = new ProgramInstruction(
+                                i.Substring(0, 20).Trim(),
+                                i.Substring(19, 20).Trim(),
+                                i.Substring(39, 20).Trim()
+                            );
+                            instructions.Add(x);
+                            // Read in new instruction
+                            i = s.ReadLine();
+                        }
+                        updateProgramView();
+                        s.Close();
                     }
-                    updateProgramView();
-                    s.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("The file you attempted to load was invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -777,6 +784,14 @@ namespace Assembly_Simulator
             timer_Tick(sender, e);
             timer.Stop();
         }
+
+		private void resetProcessing(object sender, EventArgs e)
+		{
+			processor.reset("all");
+            updateProcessorValues();
+            mainFormTabs.SelectTab(tabExecute);
+            updateCPUDiagramValues();
+		}
 
         private void collapseItems_Click(object sender, EventArgs e)
         {

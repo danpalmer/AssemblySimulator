@@ -188,7 +188,7 @@ namespace Assembly_Simulator
                     OR(label, intOperand);
                     break;
                 default:
-                    error(null, "Error, could not process instruction");
+                    error(null, "Error 01, could not process instruction");
                     break;
             }
 
@@ -220,7 +220,7 @@ namespace Assembly_Simulator
             //  the operand
             if (operand[0] == Convert.ToChar("#"))
             {
-                error(null, "Cannot set direct address as memory location value");
+                error(null, "Error 02, Cannot set direct address as memory location value");
                 Debug.WriteLine("Error: Bad Instruction");
             }
             else if (checkSymlink(operand))
@@ -235,8 +235,8 @@ namespace Assembly_Simulator
                 }
 
 				// Code should never reach this location
-                error(null, "Could not find the label in array, "
-                    + "please contact the publisher of this program for assistance");
+                error(null, "Error 03, Could not find the label in array, "
+                    + "please see the troubleshooting section of the user manual.");
             }
             else
             {
@@ -285,7 +285,7 @@ namespace Assembly_Simulator
             }
             else
             {
-                error(null, "No character input");
+                error(null, "Error 04, No character input");
             }
         }
 
@@ -301,7 +301,7 @@ namespace Assembly_Simulator
 
                 // Validation done here because the input window is for letters and numbers
                 if (y > 255 || y < 0)
-                    error(null, "Integer is not within the correct bounds");
+                    error(null, "Error 05, Integer is not within the correct bounds");
                 else
                 {
                     accumulator = y.ToString();
@@ -309,7 +309,7 @@ namespace Assembly_Simulator
             }
             else
             {
-                error(null, "No character input");
+                error(null, "Error 06, No character input");
             }
         }
 
@@ -343,7 +343,7 @@ namespace Assembly_Simulator
             }
             catch
             {
-                error(null, "Could not convert operand or accumulator to an integer.");
+                error(null, "Error 07, Could not convert operand or accumulator to an integer.");
             }
         }
 
@@ -351,7 +351,7 @@ namespace Assembly_Simulator
         private void DEFB(string label, int operand)
         {
 			if (label == "" || label == null) {
-				error("No Label Provided", "The DEFB instruction requires a Label for it to link to a RAM address. Do not use a Label that you may use for Jump instructions.");
+				error("No Label Provided", "Error 08, The DEFB instruction requires a Label for it to link to a RAM address. Do not use a Label that you may use for Jump instructions.");
 			}
             // Ignore operand
             int ramIndex = parent.addRAM(1);
@@ -377,12 +377,12 @@ namespace Assembly_Simulator
                 this.programCounter = (parent.programInstructionIndexForLabel(operand) - 1).ToString();
                 if (this.programCounter == (-2).ToString())
                 {
-                    error("Bad Jump Instruction", "The label you tried to jump to does not exist.");
+                    error("Bad Jump Instruction", "Error 09, The label you tried to jump to does not exist.");
                 }
             }
             else
             {
-                error("Bad Jump Instruction", "The Jump instruction requires an operand of the label to jump to.");
+                error("Bad Jump Instruction", "Error 10, The Jump instruction requires an operand of the label to jump to.");
             }
         }
 
@@ -432,8 +432,12 @@ namespace Assembly_Simulator
         private void AND(string label, int operand)
         {
             int x = Convert.ToInt32(accumulator);
-            x = x & operand;
-            accumulator = x.ToString();
+            byte acb = Convert.ToByte(x);
+            byte opb = Convert.ToByte(operand);
+            byte rsb = (byte)(acb & opb);
+            int result = Convert.ToInt32(rsb);
+            accumulator = result.ToString();
+            
         }
 
         // Run OR on the accumulator and operand
@@ -466,8 +470,8 @@ namespace Assembly_Simulator
                     }
                 }
 
-                error(null, "Could not find symbolic link in array, "
-                    + "please contact the publisher of this program for assistance");
+                error(null, "Error 11, Could not find symbolic link in array, "
+                    + "please contact the publisher of this program for assistance.");
             }
             else if (parent.programInstructionIndexForLabel(operand) != -1)
             {
@@ -482,20 +486,21 @@ namespace Assembly_Simulator
                 string y = parent.getValueForRAMIndex(x);
                 if (y == "error")
                 {
-                    error(null, "Memory address out of bounds");
+                    error(null, "Error 12, Memory address out of bounds");
                     return 0;
                 }
                 return Convert.ToInt32(y);
             }
-            error(null, "Badly formed operand");
+            error(null, "Error 13, Badly formed operand");
             return -1;
         }
 
         // Displays pre-formed error message with options, tells the main form to stop execution
         public void error(string title, string caption)
         {
-            if (title == null)
-                title = "Error in program execution";
+            //if (title == null)
+            //    title = "Error in program execution";
+			title = title ?? "Error in program execution";
             System.Windows.Forms.MessageBox.Show(
                 caption,
                 title,
