@@ -14,5 +14,20 @@ Error 11, Could not find symbolic link in array, please contact the publisher of
 Error 12, Memory address out of bounds
 Error 13, Badly formed operand
 
+
+InstructionView.cs
+------------------
+Error 14, Please select where you would like to enter the instruction.
+
+
 Main.cs
 -------
+Error 15, Could not find application resource Instructions.dat
+Error 16, You have not written a program to run yet. Use the boxes on the left hand side to write a program and then execute it.
+Error 17, Due to errors in the program instructions, the program could not continue. Please consult the documentation for help or seek help on writing assembly language programs from a teacher or the internet. (GENERAL)
+Error 18, Could not add instruction at that place. Check it is possible
+Error 19, Please select a line to delete
+Error 20, Malformed memory value
+Error 21, One or more of your labels has exceeded the maximum length of 20 characters. To continue saving it has been shortened automatically.
+Error 22, No path was selected, the file was not saved.
+Error 23, The file you attempted to load was invalid.
