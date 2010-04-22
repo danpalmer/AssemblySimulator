@@ -40,7 +40,7 @@
             this.evh = new Assembly_Simulator.EnhancedTextBox();
             this.rab = new Assembly_Simulator.EnhancedTextBox();
             this.evb = new Assembly_Simulator.EnhancedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.textboxLabel = new Assembly_Simulator.EnhancedTextBox();
             this.labelLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -155,15 +155,16 @@
             this.evb.TabIndex = 6;
             this.evb.TabStop = false;
             // 
-            // button1
+            // buttonCancel
             // 
-            this.button1.Location = new System.Drawing.Point(255, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Location = new System.Drawing.Point(255, 135);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 11;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.button1_Click);
             // 
             // textboxLabel
             // 
@@ -190,11 +191,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(439, 175);
             this.ControlBox = false;
             this.Controls.Add(this.labelLabel);
             this.Controls.Add(this.textboxLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.rad);
             this.Controls.Add(this.evd);
             this.Controls.Add(this.buttonOK);
@@ -236,7 +238,7 @@
         internal EnhancedTextBox rah;
         private EnhancedTextBox evd;
         private EnhancedTextBox rad;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelLabel;
         public EnhancedTextBox textboxLabel;
     }

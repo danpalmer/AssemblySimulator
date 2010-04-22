@@ -661,7 +661,7 @@
             this.tabExecute.Location = new System.Drawing.Point(4, 24);
             this.tabExecute.Name = "tabExecute";
             this.tabExecute.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExecute.Size = new System.Drawing.Size(619, 560);
+            this.tabExecute.Size = new System.Drawing.Size(619, 576);
             this.tabExecute.TabIndex = 1;
             this.tabExecute.Text = "Execute Program";
             // 
